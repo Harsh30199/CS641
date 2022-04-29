@@ -1,0 +1,217 @@
+%Credits for some parts of this macro file goes to [Prof Ramprasad Saptharishi](http://www.tcs.tifr.res.in/~ramprasad/)
+
+\newcounter{partCounter}
+\newcounter{questionCounter}
+\setcounter{questionCounter}{1}
+\nobreak\extramarks{Question \arabic{questionCounter}}{}\nobreak{}
+
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot[L]{GP \GroupNum}
+\fancyfoot[C]{}
+\fancyfoot[R]{\thepage}
+
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.5pt}
+
+%
+% Homework Problem Environment
+%
+% This environment takes an optional argument. When given, it will adjust the
+% problem counter. This is useful for when the problems given for your
+% assignment aren't sequential.
+%
+\newenvironment{question}[1][-1]{
+    \ifnum#1>0
+        \setcounter{questionCounter}{#1}
+    \fi
+    \section*{Question \arabic{questionCounter}}
+    \setcounter{partCounter}{1}
+    
+}
+{
+    
+}
+
+\newenvironment{solution}{
+    \subsection*{Solution}
+}
+{
+	\stepcounter{questionCounter}    
+	\newpage
+}
+
+\numberwithin{equation}{questionCounter}
+\declaretheoremstyle[bodyfont=\normalfont,qed=\qedsymbol]{noproofstyle} 
+\declaretheoremstyle[bodyfont=\normalfont \upshape]{thmstyle} 
+
+\declaretheorem[numberlike=equation]{axiom}
+
+\declaretheorem[numberlike=equation]{observation}
+\declaretheorem[numberlike=equation,style=noproofstyle,name=Observation]{observationwp}
+\declaretheorem[name=Observation,numbered=no]{observation*}
+
+\declaretheorem[numberlike=equation]{fact}
+\declaretheorem[numberlike=equation]{subclaim}
+%\declaretheorem[numberlike=equation]{problem}
+
+\declaretheorem[numberlike=equation,style=thmstyle]{theorem}
+\declaretheorem[numberlike=equation,style=noproofstyle,name=Theorem]{theoremwp}
+\declaretheorem[name=Theorem,style=thmstyle,numbered=no]{theorem*}
+
+\declaretheorem[numberlike=equation,style=thmstyle]{lemma}
+\declaretheorem[name=Lemma,numbered=no,style=thmstyle]{lemma*}
+\declaretheorem[numberlike=equation,style=noproofstyle,name=Lemma]{lemmawp}
+
+\declaretheorem[numberlike=equation,style=thmstyle]{corollary}
+\declaretheorem[name=Corollary,numbered=no,style=thmstyle]{corollary*}
+\declaretheorem[numberlike=equation,style=noproofstyle,name=Corollary]{corollarywp}
+
+\declaretheorem[numberlike=equation,style=thmstyle]{proposition}
+\declaretheorem[name=Proposition,numbered=no,style=thmstyle]{proposition*}
+\declaretheorem[numberlike=equation,style=noproofstyle,name=Proposition]{propositionwp}
+
+\declaretheorem[numberlike=equation,style=thmstyle]{claim}
+\declaretheorem[name=Claim,numbered=no,style=thmstyle]{claim*}
+\declaretheorem[numberlike=equation,style=noproofstyle,name=Claim]{claimwp}
+
+\declaretheorem[numberlike=equation,style=thmstyle]{conjecture}
+\declaretheorem[name=Conjecture,numbered=no,style=thmstyle]{conjecture*}
+
+\declaretheoremstyle[bodyfont=\normalfont,qed=$\lozenge$]{defstyle} 
+
+\declaretheorem[numberlike=equation,style=defstyle]{definition}
+\declaretheorem[unnumbered,name=Definition,style=defstyle]{definition*}
+
+\declaretheorem[numberlike=equation,style=defstyle]{remark}
+\declaretheorem[unnumbered,name=Remark,style=defstyle]{remark*}
+
+\newenvironment{myproof}[1]%
+{\vspace{1ex}\noindent{\em Proof.}\hspace{0.5em}\def\myproof@name{#1}}%
+{\hfill{ \qedsymbol}\vspace{1ex}}
+\newenvironment{proof-sketch}{\medskip\noindent{\em Sketch of Proof.}\hspace*{1em}}{\qed\bigskip}
+\newenvironment{proof-attempt}{\medskip\noindent{\em Proof attempt.}\hspace*{1em}}{\bigskip}
+\newenvironment{proofof}[1]{\medskip\noindent\emph{Proof of #1.}\hspace*{1em}}{\qed\bigskip}
+
+\newcommand{\inparen }[1]{\left(#1\right)}             %\inparen{x+y}  is (x+y)
+\newcommand{\inbrace }[1]{\left\{#1\right\}}           %\inbrace{x+y}  is {x+y}
+\newcommand{\insquare}[1]{\left[#1\right]}             %\insquar{x+y}  is [x+y]
+\newcommand{\inangle }[1]{\left\langle#1\right\rangle} %\inangle{A}    is <A>
+
+\newcommand{\abs}[1]{\left|#1\right|}                  %\abs{x}        is |x|
+\newcommand{\norm}[1]{\left\Vert#1\right\Vert}         %\norm{x}       is ||x||
+
+\newcommand{\fspan}{\operatorname{\F\text{-span}}}
+
+\newcommand{\union}{\cup}
+\newcommand{\Union}{\bigcup}
+\newcommand{\intersection}{\cap}
+\newcommand{\Intersection}{\bigcap}
+
+\newcommand{\ceil}[1]{\lceil #1 \rceil}
+\newcommand{\floor}[1]{\lfloor #1 \rfloor}
+
+
+\newcommand{\eqdef}{\stackrel{\text{def}}{=}}
+\newcommand{\setdef}[2]{\inbrace{{#1}\ : \ {#2}}}      % E.g: \setdef{x}{f(x) = 0}
+\newcommand{\set}[1]{\inbrace{#1}}
+\newcommand{\innerproduct}[2]{\left\langle{#1},{#2}\right\rangle} %\innerproduct{x}{y} is <x,y>.
+\newcommand{\zo}{\inbrace{0,1}}                        % Well just something that is used often!
+\newcommand{\parderiv}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\pderiv}[2]{\partial_{#2}\inparen{#1}}
+\newcommand{\zof}[2]{\inbrace{0,1}^{#1}\longrightarrow \inbrace{0,1}^{#2}}
+
+\newcommand*{\mywedge}{\mathord{\wedge}}
+
+
+% Commonly used blackboard letters
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\E}{\mathop{\mathbb{E}}}
+
+
+%% Bold letters
+\newcommand{\veca}{\mathbf{a}}
+\newcommand{\vecb}{\mathbf{b}}
+\newcommand{\vecc}{\mathbf{c}}
+\newcommand{\vecd}{\mathbf{d}}
+\newcommand{\vece}{\mathbf{e}}
+\newcommand{\vecf}{\mathbf{f}}
+\newcommand{\vecg}{\mathbf{g}}
+\newcommand{\vech}{\mathbf{h}}
+\newcommand{\veci}{\mathbf{i}}
+\newcommand{\vecj}{\mathbf{j}}
+\newcommand{\veck}{\mathbf{k}}
+\newcommand{\vecl}{\mathbf{l}}
+\newcommand{\vecm}{\mathbf{m}}
+\newcommand{\vecn}{\mathbf{n}}
+\newcommand{\veco}{\mathbf{o}}
+\newcommand{\vecp}{\mathbf{p}}
+\newcommand{\vecq}{\mathbf{q}}
+\newcommand{\vecr}{\mathbf{r}}
+\newcommand{\vecs}{\mathbf{s}}
+\newcommand{\vect}{\mathbf{t}}
+\newcommand{\vecu}{\mathbf{u}}
+\newcommand{\vecv}{\mathbf{v}}
+\newcommand{\vecw}{\mathbf{w}}
+\newcommand{\vecx}{\mathbf{x}}
+\newcommand{\vecy}{\mathbf{y}}
+\newcommand{\vecz}{\mathbf{z}}
+
+%% Calligraphic Letters
+\newcommand{\cala}{\mathcal{A}}
+\newcommand{\calb}{\mathcal{B}}
+\newcommand{\calc}{\mathcal{C}}
+\newcommand{\cald}{\mathcal{D}}
+\newcommand{\cale}{\mathcal{E}}
+\newcommand{\calf}{\mathcal{F}}
+\newcommand{\calg}{\mathcal{G}}
+\newcommand{\calh}{\mathcal{H}}
+\newcommand{\cali}{\mathcal{I}}
+\newcommand{\calj}{\mathcal{J}}
+\newcommand{\calk}{\mathcal{K}}
+\newcommand{\call}{\mathcal{L}}
+\newcommand{\calm}{\mathcal{M}}
+\newcommand{\caln}{\mathcal{N}}
+\newcommand{\calo}{\mathcal{O}}
+\newcommand{\calp}{\mathcal{P}}
+\newcommand{\calq}{\mathcal{Q}}
+\newcommand{\calr}{\mathcal{R}}
+\newcommand{\cals}{\mathcal{S}}
+\newcommand{\calt}{\mathcal{T}}
+\newcommand{\calu}{\mathcal{U}}
+\newcommand{\calv}{\mathcal{V}}
+\newcommand{\calw}{\mathcal{W}}
+\newcommand{\calx}{\mathcal{X}}
+\newcommand{\caly}{\mathcal{Y}}
+\newcommand{\calz}{\mathcal{Z}}
+
+%% Bar characters
+\newcommand{\bara}{\overline{a}}
+\newcommand{\barb}{\overline{b}}
+\newcommand{\barc}{\overline{c}}
+\newcommand{\bard}{\overline{d}}
+
+\newcommand{\barx}{\overline{x}}
+\newcommand{\bary}{\overline{y}}
+\newcommand{\barz}{\overline{z}}
+
+\newcommand{\spaced}[1]{\quad #1 \quad}
+
+
+%% Footer numbering with brackets
+\renewcommand*{\thefootnote}{[\arabic{footnote}]}
+
+%% Add footnote without number reference
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}

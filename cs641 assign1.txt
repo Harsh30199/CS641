@@ -1,0 +1,31 @@
+Used frequency table to first substitute e and t with most frequencies 
+
+then saw many 'tie' in pairs where i was to be substituted so we replaced it with h as the is the most common three letter word and also noticed that whitespaces where shuffled, so we started fixing the whitespaces too
+
+then in the last line after full stop we had text 'Tho kokthee' where we though o and k could be replaced by 'i' and 's' respectively to make some sense of sentence to be 'This is the
+
+then we saw that replacing q with n and m with r was making 'interest' in two places and then there was scope for 'interesting' by replacing a with g
+
+Then we saw there was single letter 'h' , generally it is 'i' or 'a' as 'i' was done, we chose 'a'
+
+'o' which has higher frequency was left so we replaced 'g' with 'o' and it worked
+
+'e' was replaced by 'f' to make 'of' 
+  
+'d' was replaced by 'm' to make 'message', 'sum','more' 
+
+'j' and 'u' were replaced by 'p' and 'l' to make simple 
+
+'p' was replaced 'c' to make code and cipher
+
+'n' was replaced by 'b' to make chamber
+
+'y' and 'l' were replaced by 'd' and 'w' to make password
+
+'s' with 'v' for caves
+
+'r' with 'y' for by
+
+'v' with 'u' for you and substitution
+
+x with q for quotes

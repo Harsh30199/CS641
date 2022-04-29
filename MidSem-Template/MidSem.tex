@@ -1,0 +1,67 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage}
+\usepackage{amsthm}
+%\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{scrextend}
+\usepackage{todonotes}
+\usepackage{tikz}
+\usepackage{thmtools,thm-restate}
+\usepackage{setspace}
+\usepackage[colorlinks]{hyperref}
+\usepackage{extramarks}
+\usepackage{enumerate}
+\usepackage[outline]{contour}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+
+\input{./bib/customurlbst/bibmacros}
+
+% Update these details with your Group Number, Member Names (Roll No.).
+\newcommand{\GroupNum}{261}
+\newcommand{\MembAName}{Kurt G\"odel (280406)}
+\newcommand{\MembBName}{Bertrand Russell (180572)}
+\newcommand{\MembCName}{Alonzo Church (140603)}
+
+% Font
+\usepackage{mathpazo}
+% Or you could use ...
+% \usepackage[rm,light]{roboto}
+% \usepackage[T1]{fontenc}
+
+\input{./macros}
+\allowdisplaybreaks
+
+\begin{document}
+    \noindent
+    \input{header}
+    \onehalfspace
+    \thispagestyle{plain}
+
+    \begin{question}
+        Consider a variant of DES algorithm in which all the S-boxes are replaced. The new S-boxes are all identical and defined as follows.
+        \begin{quote}
+            Let $b_1, b_2, \cdots, b_6$ represent the six input bits to an S-box. Its output is $b_1 \oplus (b_2 \cdot b_3 \cdot b_4), (b_3 \cdot b_4 \cdot b_5) \oplus b_6, b_1 \oplus (b_4 \cdot b_5 \cdot b_2), (b_5 \cdot b_2 \cdot b_3) \oplus b_6$.
+        \end{quote}
+        Here '$\oplus$' is bitwise XOR operation, and '$\cdot$' is bitwise multiplication. Design an algorithm to break 16-round DES with new S-boxes as efficiently as possible.
+    \end{question}
+    \begin{solution}
+        Your solution goes here.
+    \end{solution}
+
+    \begin{question}
+        Suppose Anubha and Braj decide to do key-exchange using Diffie-Hellman scheme except for the choice of group used. Instead of using $F_{p}^{*}$ as in Diffie-Hellman, they use $S_n$, the group of permutations of numbers in the range $[1, n]$. It is well-known that $|S| = n!$ and therefore, even for $n = 100$, the group has very large size. The key-exchange happens as follows:
+        \begin{quote}
+            An element $g \in S_n$ is chosen such that $g$ has large order, say $l$. Anubha randomly chooses a random number $c \in [1, l - 1]$, and sends $g^c$ to Braj. Braj choses another random number $d \in [1, l - 1]$ and sends $g^d$ to Anubha. Anubha computes $k = (g^d)^c$ and Braj computes $k = (g^c)^d$.
+        \end{quote}
+        Show that an attacker Ela can compute the key $k$ efficiently.
+    \end{question}
+    
+    \begin{solution}
+        Your solution goes here.
+    \end{solution}
+
+    \bibliographystyle{./bib/customurlbst/alphaurlpp}
+    \bibliography{./bib/references}
+\end{document}  

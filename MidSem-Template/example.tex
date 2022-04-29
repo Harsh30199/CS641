@@ -1,0 +1,70 @@
+\documentclass[12pt]{article}
+\usepackage{fullpage}
+\usepackage{amsthm}
+%\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{scrextend}
+\usepackage{todonotes}
+\usepackage{tikz}
+\usepackage{thmtools,thm-restate}
+\usepackage{setspace}
+\usepackage[colorlinks]{hyperref}
+\usepackage{extramarks}
+\usepackage{enumerate}
+\usepackage[outline]{contour}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+
+\input{./bib/customurlbst/bibmacros}
+
+\newcommand{\GroupNum}{261}
+\newcommand{\MembAName}{Kurt G\"odel (280406)}
+\newcommand{\MembBName}{Bertrand Russell (180572)}
+\newcommand{\MembCName}{Alonzo Church (140603)}
+
+% Font
+\usepackage{mathpazo}
+% Or you could use ...
+% \usepackage[rm,light]{roboto}
+% \usepackage[T1]{fontenc}
+
+\input{./macros}
+\allowdisplaybreaks
+
+\begin{document}
+    \noindent
+    \input{header}
+    \onehalfspace
+
+    \begin{question}
+        Your question goes here. 
+    \end{question}
+
+    \begin{solution}
+        Your solution goes here. If your want to state a theorem, the do it in the following way - 
+
+        \begin{theorem} \label{thm:sumNaturalNo}
+            For all natural numbers $n$, $\sum_{i=1}^n i = n(n+1)/2$.
+        \end{theorem}
+
+        \begin{proof}
+            We will induct over $n$ to prove the theorem. When $n=1$ then the statement is vacuously true. Let the statement be true for $(n-1)$. Then,
+            \begin{align}
+                \sum_{i=1}^{n} i &= \sum_{i=1}^{n-1} i + n \\
+                &= \frac{(n-1)n}{2} + (n) = \frac{n(n+1)}{2}. \label{eq:NaturalSum}
+            \end{align}
+        \end{proof}
+        
+        Explore the \emph{macro.tex} for more such typesetting like claims, propositions, proof sketch etc. You could define your own as well. If labeled properly, you could refer theorems like \autoref{thm:sumNaturalNo} or equations like \autoref{eq:NaturalSum}.
+
+        \noindent Reference to a book or a paper in your assignment, then do the following.
+        \begin{enumerate}
+            \item Find a Bibtex entry using scholar.google.com and then add it to \emph{./bib/references.bib}.
+            \item Use the \emph{Key} to reference it like \cite{RK12}.
+        \end{enumerate}
+    \end{solution}
+
+    \bibliographystyle{./bib/customurlbst/alphaurlpp}
+    \bibliography{./bib/references}
+\end{document}  
